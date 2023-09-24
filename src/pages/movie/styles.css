@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2? family= Mooli & family= Nunito:ital,wght@1,700 & display=swap');
 nav {
   display: flex;
   align-items: center;
@@ -11,6 +12,10 @@ nav h1 {
 
 .container {
   text-align: center;
+  margin-top: 10rem;
+}
+.movie-info{
+  display: flex;
 }
 
 .link_button {
@@ -30,8 +35,8 @@ nav h1 {
 }
 
 .img_movie {
-  width: 20%;
-  margin: 0 40%;
+  width: 25%;
+  margin: 0 10%;
 }
 
 .movie-desc {
@@ -41,11 +46,30 @@ nav h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 0 30%;
+  margin: 0 3%;
+  width: 90vw;
 }
 .descricao h4 {
-  font-size: 24px;
+  font-family: 'Mooli', sans-serif;
+font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+}
+.descricao h3 {
+  font-size: 25px;
 }
 .descricao p {
+  width: 40vw;
+    font-family: 'Mooli', sans-serif;
   text-indent: 30px;
+}
+.favorito-button {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.favorito-button.favorito-remover {
+  background-color: red; /* ou a cor desejada para "Remover dos Favoritos" */
 }

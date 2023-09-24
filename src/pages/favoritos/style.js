@@ -52,4 +52,3 @@ export const Btn = styled.button`
     cursor: pointer;
     transition: all 250ms;
 `;
-

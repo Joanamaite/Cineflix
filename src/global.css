@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: #000;
   color: white;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */

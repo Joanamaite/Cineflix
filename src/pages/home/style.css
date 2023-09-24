@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2? family= Nunito:ital,wght@1,700 & display=swap');
+@import "~@fortawesome/fontawesome-free/css/all.css";
+.body::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to top,#000000, #000000,transparent) !important;
+    z-index: 5 !important;
+    height: 20%;
+    width: 100%;
+    border: none !important;
+}
+.body{
+    background: linear-gradient(to top #be0cf5,#000000, #000000 ) !important;
+}
+a{
+  text-decoration: none !important;
+}
+
+.imagem_banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 95vh;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: url(/public/Images/banner6.png);
+}
+
+.banner_content {
+    margin-top: -4rem;
+    text-align: center;
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+   
+    width: 70vw;
+}
+.titulo{
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 4rem  !important;
+    font-weight: 400 !important;
+}
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-left: 23rem;
+}
+
+
+/* CSS */
+.button-34 {
+    background: #940988;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 30px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+
+  }
+  .navbar {
+    background-color: #0000008c !important;
+    z-index: 9;
+  }
+  .nav-link{
+    color: #fff;
+   
+  }
+  .nav-link:hover{
+    color: #940988;
+  }
+  .navbar-brand{
+        color: #FFFFFF !important;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 1.5vw;
+        justify-content: center!important;
+        
+  }
+  .navbar-nav{
+    margin-left: 15rem !important;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+    background: #000000;
+  }
+  
+  .search-box{
+    position: absolute;
+    top: 50%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+    background: #00000048;
+    height: 50px;
+    border-radius: 50px;
+    padding: 12.5px;
+  }
+  
+  .search-button{
+    color: #f8f8f8;
+    float: right;
+    width: 50px;
+    height: 30px;
+    border-radius: 50%;
+    background: #00000063;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+  }
+  
+  .search-box:hover > .search-txt {
+    width: 300px;
+    padding: 0 7.5px;
+  }
+  
+  .search-box:hover > .search-button {
+    background: #00000052;
+  }
+  
+  .search-txt{
+    border: none;
+    background: none;
+    outline:none;
+    float: left;
+    padding: 0;
+    color: #f1f1f1;
+    font-size: 20px;
+    transition: 0.4s;
+    line-height: 30px;
+    width: 0;
+  }
+  
+  
