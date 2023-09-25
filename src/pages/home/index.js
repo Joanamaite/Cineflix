@@ -12,6 +12,8 @@ function Home() {
 
     const [movies, setMovies] = useState([]);
     const [searchValue, setSearchValue] = useState("");
+    const [selectedGenre, setSelectedGenre] = useState("");
+
     const KEY = process.env.REACT_APP_KEY;
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${KEY}&language=pt-BR`)
@@ -44,6 +46,22 @@ function Home() {
         handleSearch();
     };
 
+    const handleGenreSearch = () => {
+        if (selectedGenre.trim() !== "") {
+            fetch(
+                `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=pt-BR&with_genres=${selectedGenre}`
+            )
+                .then((response) => response.json())
+                .then((data) => {
+                    setMovies(data.results);
+                })
+                .catch((error) => {
+                    console.error("Erro ao buscar filmes por gênero:", error);
+                });
+        }
+    };
+
+
 
     return (
         <Container>
@@ -61,13 +79,33 @@ function Home() {
                                         <a class="nav-link" href="#">Home</a>
                                     </li>
                                     <Link to="/Favoritos">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Favoritos</a>
-                                    </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Favoritos</a>
+                                        </li>
                                     </Link>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#movie-list">Filmes</a>
                                     </li>
+                                    {/* <li class="nav-item">
+                                        <div class="genre-search">
+                                            <select
+                                                className="genre-select"
+                                                value={selectedGenre}
+                                                onChange={(e) => {
+                                                    setSelectedGenre(e.target.value);
+                                                    handleGenreSearch(e.target.value);
+                                                }}
+                                            >
+                                                <option value="">Selecionar Gênero</option>
+                                                <option value="35">Ação</option>
+                                                <option value="28">Comédia</option>
+                                                <option value="18">Drama</option>
+                                                <option value="16">Animação</option>
+                                                 <option value="12">Aventura</option>
+                                                  <option value="80">Crime</option>
+                                            </select>
+                                        </div>
+                                    </li> */}
 
                                 </ul>
                                 <div class="search-box">
@@ -100,20 +138,20 @@ function Home() {
                     </div>
                 </div>
                 <MovieList id="movie-list">
-                {movies.map((movie) => {
-                    return (
-                    <Link to={`/${movie.id}`}>
-                        <Movie key={movie.id}>
-                            <img
-                                src={`${imagePath}${movie.poster_path}`}
-                                alt="{movie.title}"
-                            />
-                        
-                        </Movie>   
-                         </Link>
-                    );
-                })}
-            </MovieList>
+                    {movies.map((movie) => {
+                        return (
+                            <Link to={`/${movie.id}`}>
+                                <Movie key={movie.id}>
+                                    <img
+                                        src={`${imagePath}${movie.poster_path}`}
+                                        alt="{movie.title}"
+                                    />
+
+                                </Movie>
+                            </Link>
+                        );
+                    })}
+                </MovieList>
             </div>
         </Container>
 
