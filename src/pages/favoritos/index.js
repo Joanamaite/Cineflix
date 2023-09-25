@@ -1,4 +1,4 @@
-// Favoritos.js
+
 import React from "react";
 import { useEffect, useState } from "react";
 import { Container, Movie, MovieList, Btn } from "./style";
@@ -10,8 +10,6 @@ const Favoritos = () => {
   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
   const [searchValue, setSearchValue] = useState("");
-
-
 
   return (
     <Container>
@@ -27,7 +25,6 @@ const Favoritos = () => {
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
                   <Link to="/">
                     <li class="nav-item">
-
                       <a class="nav-link" href="#">Home</a>
                     </li>
                   </Link>

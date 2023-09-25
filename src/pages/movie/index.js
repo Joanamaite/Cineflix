@@ -1,4 +1,4 @@
-// Movie.js
+
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import "./styles.css";
@@ -8,7 +8,7 @@ const Movie = () => {
   const imagePath = "https://image.tmdb.org/t/p/w500";
 
   const [movie, setMovie] = useState([]);
-  const [isFavorite, setIsFavorite] = useState(false); // Estado para controlar se é favorito
+  const [isFavorite, setIsFavorite] = useState(false); 
   const KEY = process.env.REACT_APP_KEY;
 
   useEffect(() => {
@@ -94,10 +94,10 @@ const Movie = () => {
         </div>
         <div className="actions">
           <Link to="/">
-            <button className="link_button">Voltar</button>
+          <button className="button-62 link_button" role="button">Voltar</button>
           </Link>
-          <button className="favorito-button" onClick={toggleFavorite}>
-            {isFavorite ? "Remover dos Favoritos" : "Favoritar"}
+          <button className="favorito-button button-62 link_button " role="button" onClick={toggleFavorite}>
+            {isFavorite ? "Desfavoritar" : "Favoritar"}
           </button>
         </div>
       </div>

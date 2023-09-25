@@ -1,7 +1,7 @@
 //eslint-disable-next-line
 import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Movie, MovieList,Btn } from "./style";
+import { Container, Movie, MovieList } from "./style";
 import { Link } from "react-router-dom";
 import "./style.css";
 
@@ -56,7 +56,7 @@ function Home() {
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-3">
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Home</a>
                                     </li>
@@ -65,7 +65,6 @@ function Home() {
                                         <a class="nav-link" href="#">Favoritos</a>
                                     </li>
                                     </Link>
-                                    
                                     <li class="nav-item">
                                         <a class="nav-link" href="#movie-list">Filmes</a>
                                     </li>
@@ -84,7 +83,7 @@ function Home() {
                                             }
                                         }}
                                     />
-                                    <a href="#" class="search-button" onClick={handleSearchButtonClick}>
+                                    <a href="#movie-list" class="search-button" onClick={handleSearchButtonClick}>
                                         <i class="fas fa-search"></i>
                                     </a>
                                 </div>
@@ -97,7 +96,6 @@ function Home() {
                             <a href="#movie-list">
                                 <button className="button-34" role="button">Filmes</button>
                             </a>
-                           
                         </div>
                     </div>
                 </div>

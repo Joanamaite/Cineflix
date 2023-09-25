@@ -14,6 +14,7 @@ export const MovieList = styled.ul`
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     column-gap: 3rem;
     row-gap: 4rem;
+
 `;
 
 export const Movie = styled.li`
@@ -21,7 +22,8 @@ export const Movie = styled.li`
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin-top:8rem;
+    margin-top:7rem;
+   
     img {
         width: 250px;
         border-radius: 1rem;

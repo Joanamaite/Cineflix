@@ -19,18 +19,20 @@ nav h1 {
 }
 
 .link_button {
-  margin-top: 5px;
+  margin-top: -20px;
+  margin-bottom: 10px; 
   padding: 0.7rem 3rem;
   border: none;
   border-radius: 15px;
   color: #212121;
   background-color: #ffffff;
   font-weight: 1000;
-  font-size: 12 px;
+  font-size: 12px;
   cursor: pointer;
   transition: all 250ms;
 }
-.link_button:hover{
+
+.link_button:hover {
   transform: scale(1.1);
 }
 
@@ -46,8 +48,9 @@ nav h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 0 3%;
+  margin: 0 1%;
   width: 90vw;
+  height: 20vh;
 }
 .descricao h4 {
   font-family: 'Mooli', sans-serif;
@@ -63,13 +66,43 @@ font-family: 'Nunito', sans-serif;
   text-indent: 30px;
 }
 .favorito-button {
-  background-color: #007bff;
-  color: white;
-  padding: 5px 10px;
+
+  padding: 5px 5px;
   border: none;
   cursor: pointer;
 }
 
-.favorito-button.favorito-remover {
-  background-color: red; /* ou a cor desejada para "Remover dos Favoritos" */
+/* CSS */
+.button-62 {
+  background: linear-gradient(to bottom right, #f3f0f2, #f7f1f5);
+  color: #212121;
+ margin-right: 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+.actions{
+  margin-top: -130px;
+  margin-left: 380px;
 }
