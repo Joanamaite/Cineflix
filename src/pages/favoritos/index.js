@@ -55,15 +55,16 @@ const Favoritos = () => {
       </div>
       <ul>
         <MovieList id="movie-list">
-          {favorites.map((fav) => (
-            <div key={fav.id} style={{ marginRight: "20px" }}>
-              <Movie>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${fav.poster_path}`}
-                  alt={fav.title}
-                />
-                {fav.title}
-              </Movie>
+          {favorites.map((movie) => (
+            <div key={movie.id} style={{ marginRight: "20px" }}>
+              <Link to={`/${movie.id}`}>
+                <Movie key={movie.id}>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                </Movie>
+              </Link>
             </div>
           ))}
         </MovieList>

@@ -14,6 +14,7 @@ function Home() {
     const [searchValue, setSearchValue] = useState("");
     const [selectedGenre, setSelectedGenre] = useState("");
 
+
     const KEY = process.env.REACT_APP_KEY;
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${KEY}&language=pt-BR`)
@@ -41,26 +42,37 @@ function Home() {
         setSearchValue(event.target.value);
     };
 
+   const handleGenreChange = (event) => {
+  const selectedGenreId = event.target.value;
+  setSelectedGenre(selectedGenreId); // Atualize o estado com o gênero selecionado
+
+  if (selectedGenreId) {
+    // Se um gênero válido foi selecionado, faça a solicitação com o gênero como parâmetro
+    fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=pt-BR&with_genres=${selectedGenreId}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setMovies(data.results);
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar filmes por gênero:", error);
+      });
+  } else {
+    // Se nenhum gênero foi selecionado (Todos), recupere os filmes populares novamente
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${KEY}&language=pt-BR`)
+      .then((response) => response.json())
+      .then((data) => {
+        setMovies(data.results);
+      });
+  }
+};
+
 
     const handleSearchButtonClick = () => {
         handleSearch();
     };
-
-    const handleGenreSearch = () => {
-        if (selectedGenre.trim() !== "") {
-            fetch(
-                `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=pt-BR&with_genres=${selectedGenre}`
-            )
-                .then((response) => response.json())
-                .then((data) => {
-                    setMovies(data.results);
-                })
-                .catch((error) => {
-                    console.error("Erro ao buscar filmes por gênero:", error);
-                });
-        }
-    };
-
+ 
 
 
     return (
@@ -86,28 +98,22 @@ function Home() {
                                     <li class="nav-item">
                                         <a class="nav-link" href="#movie-list">Filmes</a>
                                     </li>
-                                    {/* <li class="nav-item">
-                                        <div class="genre-search">
-                                            <select
-                                                className="genre-select"
-                                                value={selectedGenre}
-                                                onChange={(e) => {
-                                                    setSelectedGenre(e.target.value);
-                                                    handleGenreSearch(e.target.value);
-                                                }}
-                                            >
-                                                <option value="">Selecionar Gênero</option>
-                                                <option value="35">Ação</option>
-                                                <option value="28">Comédia</option>
-                                                <option value="18">Drama</option>
-                                                <option value="16">Animação</option>
-                                                 <option value="12">Aventura</option>
-                                                  <option value="80">Crime</option>
-                                            </select>
-                                        </div>
-                                    </li> */}
-
+                                    <li class="nav-item">
+                                        <select
+                                            className="genre-select"
+                                            value={selectedGenre}
+                                            onChange={handleGenreChange}
+                                        >
+                                            <option value="">Todos</option> {/* Opção padrão para mostrar todos */}
+                                            <option value="28">Ação</option>
+                                            <option value="35">Comédia</option>
+                                            <option value="27">Terror</option>
+                                            <option value="10749">Romance</option>
+                                            <option value="878">Ficção Científica</option>
+                                        </select>
+                                    </li>
                                 </ul>
+
                                 <div class="search-box">
                                     <input
                                         class="search-txt"
@@ -135,6 +141,7 @@ function Home() {
                                 <button className="button-34" role="button">Filmes</button>
                             </a>
                         </div>
+
                     </div>
                 </div>
                 <MovieList id="movie-list">
